@@ -5,6 +5,9 @@
 
 // MOVE TO ROUTE FOLDER
 
+var path = require("path");
+
+
 var dbNotes = require("./../db/db.json");
 
 
@@ -14,8 +17,21 @@ module.exports = function(app) {
         res.json(dbNotes);
     });
 
-    app.post("/api/notes", function(req, res) {
-        dbNotes.push(req.body);
+    app.get("/api/notes/:noteTitle", function(req, res) {
+        var noteSearched = req.params.noteTitle;
+        for(let note of dbNotes) {
+            if(note.title === noteSearched) {
+                return res.json(note);
+            }
+        }
+
+        return res.send("Note not found.")
+
     });
+
+
+    // app.post("/api/notes", function(req, res) {
+    //     dbNotes.push(req.body);
+    // });
 
 };
