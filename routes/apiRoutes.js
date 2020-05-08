@@ -5,6 +5,8 @@
 
 // MOVE TO ROUTE FOLDER
 
+var app = require("express").Router();
+
 var path = require("path");
 
 
@@ -30,8 +32,12 @@ module.exports = function(app) {
     });
 
 
-    // app.post("/api/notes", function(req, res) {
-    //     dbNotes.push(req.body);
-    // });
+    app.post("/api/notes", function(req, res) {
+
+
+
+        var addingNote = req.body;
+        dbNotes.push(req.body);
+    });
 
 };
