@@ -34,10 +34,14 @@ module.exports = function(app) {
 
     app.post("/api/notes", function(req, res) {
 
+        console.log("Saving test!");
+        console.log("Value = ");
+        console.log(req.body);
 
-
-        var addingNote = req.body;
+        // var addingNote = req.body;
         dbNotes.push(req.body);
+
+        res.redirect(req.get('referer'));
     });
 
 };
