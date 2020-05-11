@@ -38,10 +38,31 @@ module.exports = function(app) {
         console.log("Value = ");
         console.log(req.body);
 
+
         // var addingNote = req.body;
         dbNotes.push(req.body);
 
         res.redirect(req.get('referer'));
+    });
+
+    app.delete("/api/notes/:noteID", function(req, res) {
+        
+        console.log("Testing delete!");
+
+        var noteSearched = req.params.noteID;
+
+        console.log("req = ");
+        console.log(noteSearched);
+
+        // var noteSearched = req.params.noteTitle;
+        // for(let note of dbNotes) {
+        //     if(note.title === noteSearched) {
+        //         return res.json(note);
+        //     }
+        // }
+
+        // return res.send("Note not found.")
+
     });
 
 };

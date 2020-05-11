@@ -51,9 +51,15 @@ var renderActiveNote = function() {
 
 // Get the note data from the inputs, save it to the db and update the view
 var handleNoteSave = function() {
+  // Adding an ID number to this note
+  let noteID = "";
+  for(let i = 0; i < 4; i++) {
+      noteID = noteID + Math.floor(Math.random() * 9);
+  }
   var newNote = {
     title: $noteTitle.val(),
-    text: $noteText.val()
+    text: $noteText.val(),
+    id: noteID
   };
 
   saveNote(newNote).then(function(data) {
@@ -70,6 +76,10 @@ var handleNoteDelete = function(event) {
   var note = $(this)
     .parent(".list-group-item")
     .data();
+
+    // MY TEST LINE
+    console.log("Note from handleNoteDelete:");
+    console.log(note.id);
 
   if (activeNote.id === note.id) {
     activeNote = {};
