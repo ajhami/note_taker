@@ -5,7 +5,7 @@
 
 // MOVE TO ROUTE FOLDER
 
-var app = require("express").Router();
+//var app = require("express").Router();
 
 var path = require("path");
 
@@ -49,19 +49,18 @@ module.exports = function(app) {
         
         console.log("Testing delete!");
 
-        var noteSearched = req.params.noteID;
+        var idSearched = req.params.noteID;
 
-        console.log("req = ");
-        console.log(noteSearched);
+        console.log("id number = ", idSearched);
 
-        // var noteSearched = req.params.noteTitle;
-        // for(let note of dbNotes) {
-        //     if(note.title === noteSearched) {
-        //         return res.json(note);
-        //     }
-        // }
+        for(let i = 0; i < dbNotes.length; i++) {
+            if(dbNotes[i].id === idSearched) {
+                console.log(dbNotes[i].title, " matches the id for note to be deleted!");
+                dbNotes.splice(i, 1);
+                return res.sendFile(path.join(__dirname, "./../public/notes.html"));            }
+        }
 
-        // return res.send("Note not found.")
+        return res.send("Note not found.")
 
     });
 
