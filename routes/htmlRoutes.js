@@ -14,15 +14,8 @@ module.exports = function(app) {
         res.sendFile(path.join(__dirname, "./../public/notes.html"));
     });
 
-    // app.get("/assets/js/index.js", function(req, res) {
-    //     res.sendFile(path.join(__dirname, "./../public/assets/js/index.js"));
-    // });
-
     app.get("*", function(req, res) {
         res.sendFile(path.join(__dirname, "./../public/index.html"));
     });
 
 };
-
-// NOTE: SEARCH HOW TO SERVE UP A PUBLIC FOLDER IN EXPRESS
-// SERVING STATIC FILES!!

@@ -1,3 +1,7 @@
+// ===============================================================================
+// INDEX.JS
+// ===============================================================================
+
 var $noteTitle = $(".note-title");
 var $noteText = $(".note-textarea");
 var $saveNoteBtn = $(".save-note");
@@ -53,7 +57,7 @@ var renderActiveNote = function() {
 var handleNoteSave = function() {
   // Adding an ID number to this note
   let noteID = "";
-  for(let i = 0; i < 4; i++) {
+  for(let i = 0; i < 6; i++) {
       noteID = noteID + Math.floor(Math.random() * 9);
   }
   var newNote = {
@@ -76,10 +80,6 @@ var handleNoteDelete = function(event) {
   var note = $(this)
     .parent(".list-group-item")
     .data();
-
-    // MY TEST LINE
-    console.log("Note from handleNoteDelete:");
-    console.log(note.id);
 
   if (activeNote.id === note.id) {
     activeNote = {};
