@@ -20,5 +20,7 @@ npm install
 ### Usage
 Once package installation is complete, run the server.js file to run the application on a localhost. Select "Get Started" to write, read, save and delete notes. You can select "View API" to view the API data that the express server is working with.
 
+[Click here to try this application out! (hosted on Heroku)](https://pacific-scrubland-39602.herokuapp.com)
+
 
 *© 2020 ajhami - Alexander James Hamilton. All Rights Reserved.*
