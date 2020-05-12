@@ -6,7 +6,7 @@
 ## Description
 With the use of express servers, this application serves as a pagefront to save notes. The server utilizes api functions including get, post and delete in order to manage the notes.
 
-![application gif](https://github.com/ajhami/note_taker/public/assets/images/notetaker.gif)
+![application gif](https://github.com/ajhami/note_taker/blob/master/public/assets/images/notetaker.gif)
 
 
 ## Table of Contents
